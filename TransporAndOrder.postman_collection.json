@@ -1,0 +1,127 @@
+{
+  "info": {
+    "_postman_id": "24972c83-5a3d-498c-bd01-cb89b921184f",
+    "name": "TransporAndOrder",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "16952176"
+  },
+  "item": [
+    {
+      "name": "Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "7de2aa1b-b3e1-4c76-abe6-e77fa70f8b12",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "order",
+              "value": "{\"origin\": \"Ciudad de México\", \"destination\": \"Michoacán\"}",
+              "type": "text",
+              "uuid": "318e34cb-10ea-4bb3-85c0-481ef9fd53f0",
+              "contentType": "application/json"
+            },
+            {
+              "key": "pdf",
+              "type": "file",
+              "uuid": "96a8c0c7-36b3-42bc-8280-fb32dcb9588f",
+              "src": "/C:/Users/joss-/Downloads/Haz_tu_cita-12_03_2026.pdf"
+            },
+            {
+              "key": "image",
+              "type": "file",
+              "uuid": "2bef434d-5986-4b61-babb-293182831999",
+              "src": "/C:/Users/joss-/OneDrive/Imágenes/0f83dbd7-49f3-5ac3-a23a-357d38dd3d49_800x.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/orders?driverId=a09aee36-9f8e-4266-b34d-117ecadd7a5d",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ],
+          "query": [
+            {
+              "key": "driverId",
+              "value": "a09aee36-9f8e-4266-b34d-117ecadd7a5d"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/orders/9e83836a-1140-4a69-b5e5-e9cb90616002",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "9e83836a-1140-4a69-b5e5-e9cb90616002"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateStatus",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "status",
+              "value": "DELIVERED",
+              "type": "text",
+              "uuid": "5ed3f294-6e7e-447d-ab64-929a8ae56e82"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/orders/9e83836a-1140-4a69-b5e5-e9cb90616002/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "orders",
+            "9e83836a-1140-4a69-b5e5-e9cb90616002",
+            "status"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
